@@ -942,3 +942,81 @@ img {
   background-color: var(--first-color);
 }
 
+.gallery__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 9rem;
+  flex-direction: column;
+}
+
+/* Individual Tile */
+.gallery__tile {
+  position: relative;
+  background-color: var(--container-color);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.gallery__tile.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery__tile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Tile Image */
+.gallery__tile img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Modal for Enlarged Image */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 1000;
+}
+
+.modal.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
+  animation: zoomIn 0.4s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
