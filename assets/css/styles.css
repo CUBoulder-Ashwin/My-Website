@@ -193,6 +193,7 @@ img {
   position: absolute;
   justify-self: center;
   align-self: flex-end;
+  filter: brightness(1);
 }
 
 .perfil__data {
