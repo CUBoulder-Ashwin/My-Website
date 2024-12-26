@@ -404,5 +404,11 @@
 
       <!--=============== MAIN JS ===============-->
       <script src="assets/js/main.js"></script>
+
+      <script>
+         const cacheBustedCSS = `styles.css?ver=${new Date().getTime()}`;
+         document.write(`<link rel="stylesheet" href="${cacheBustedCSS}">`);
+      </script>
+      
    </body>
 </html>
