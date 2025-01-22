@@ -81,22 +81,41 @@ sr.reveal(`.projects__card, .services__card, .experience__card`, {interval: 100}
 
 document.addEventListener("DOMContentLoaded", () => {
    const perfil = document.querySelector(".perfil");
-   const aboutButton = document.querySelector("#about-btn"); // Select the new button inside .about
+   const aboutButton = document.querySelector("#about-btn"); // Ensure this ID is used in your HTML
    const aboutOverlay = perfil.querySelector(".about-overlay");
 
-   // Show the overlay when the "About Me" button is clicked
-   aboutButton.addEventListener("click", (event) => {
-     event.preventDefault();
-     perfil.classList.toggle("active");
+   if (aboutButton) { 
+       aboutButton.addEventListener("click", (event) => {
+           event.preventDefault();
+           perfil.classList.toggle("active");
+
+           // Scroll to perfil smoothly
+           perfil.scrollIntoView({ behavior: "smooth", block: "center" });
+       });
+   }
+
+   // Hide overlay when clicking outside
+   document.addEventListener("click", (event) => {
+       if (!perfil.contains(event.target) && event.target !== aboutButton) {
+           perfil.classList.remove("active");
+       }
    });
 
-   // Hide the overlay when clicking outside
-   document.addEventListener("click", (event) => {
-     if (!perfil.contains(event.target) && event.target !== aboutButton) {
-       perfil.classList.remove("active");
-     }
-   });
+   // Responsive Fix: Adjust Image Size Dynamically
+   function updateLayout() {
+       const perfilImg = document.querySelector(".perfil__img");
+       if (window.innerWidth <= 768) {
+           perfilImg.style.width = "60%";  // Adjust image size dynamically
+       } else {
+           perfilImg.style.width = "100%"; // Restore full size on larger screens
+       }
+   }
+
+   // Run on page load and window resize
+   window.addEventListener("resize", updateLayout);
+   updateLayout(); // Initial run
 });
+
 
 
 

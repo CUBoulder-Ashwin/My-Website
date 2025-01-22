@@ -192,13 +192,12 @@ img {
 }
 
 .perfil__img {
-  width: 250px;
+  max-width: 70%; /* Adjust width relative to the container */
   position: absolute;
   justify-self: center;
   align-self: flex-end;
   filter: brightness(1);
 }
-
 .perfil__data {
   align-self: flex-end;
   background-color: hsla(0, 0%, 1%, 0.1);
