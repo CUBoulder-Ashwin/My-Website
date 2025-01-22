@@ -81,22 +81,24 @@ sr.reveal(`.projects__card, .services__card, .experience__card`, {interval: 100}
 
 document.addEventListener("DOMContentLoaded", () => {
    const perfil = document.querySelector(".perfil");
-   const aboutButton = perfil.querySelector(".button[href='#about']"); // Target the "About Me" button
+   const aboutButton = document.querySelector("#about-btn"); // Select the new button inside .about
    const aboutOverlay = perfil.querySelector(".about-overlay");
- 
-   // Show the overlay only when the "About Me" button is clicked
+
+   // Show the overlay when the "About Me" button is clicked
    aboutButton.addEventListener("click", (event) => {
-     event.preventDefault(); // Prevent default anchor behavior
-     perfil.classList.add("active");
+     event.preventDefault();
+     perfil.classList.toggle("active");
    });
- 
-   // Hide the overlay and blur when clicking anywhere outside
+
+   // Hide the overlay when clicking outside
    document.addEventListener("click", (event) => {
-     // Check if the click is outside the perfil or the "About Me" overlay
-     if (!perfil.contains(event.target) || event.target === aboutOverlay) {
+     if (!perfil.contains(event.target) && event.target !== aboutButton) {
        perfil.classList.remove("active");
      }
    });
- });
+});
+
+
+
  
  
