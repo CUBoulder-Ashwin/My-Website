@@ -934,7 +934,7 @@ img {
   }
 }
 
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 2400px) {
   .nav {
     width: max-content;
     height: max-content;
@@ -957,6 +957,59 @@ img {
   .scrollup {
     right: 4rem;
   }
+
+  .perfil__data {
+    width: 450px;
+    padding: 1.5rem;
+    border-radius: 2rem;
+  }
+  
+  .perfil {
+    height: 100%;
+  }
+
+  .perfil__img {
+    align-self: auto;
+  }
+
+  .home__container {
+    grid-template-columns: 390px 720px 390px;
+    align-items: stretch;
+  }
+
+  .projects__container {
+    grid-template-columns: repeat(3, 500px);
+    gap: 2rem;
+  }
+
+  .services__container {
+    grid-template-columns: repeat(3, 500px);
+    gap: 2rem;
+  }
+
+  .experience__card {
+    grid-template-columns: 400px 1020px;
+    column-gap: 8rem;
+  }
+
+  .contact__container {
+    grid-template-columns: 1000px;
+  }
+  .contact__group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact__area {
+    height: 25rem;
+  }
+  .contact__button {
+    width: max-content;
+    justify-self: center;
+  }
+
+  .footer {
+    padding-top: 14rem;
+  }
+
 }
 
 /*=============== PROJECT ===============*/
