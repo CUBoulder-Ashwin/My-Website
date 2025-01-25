@@ -732,6 +732,15 @@ img {
   }
 }
 
+@media screen and (min-width: 400px) {
+
+  .exp__logo {
+    width: 200px;
+    margin: 0 auto;
+  }
+
+}
+
 /* For medium devices */
 @media screen and (min-width: 540px) {
   .nav {
@@ -817,6 +826,7 @@ img {
   .perfil__img {
     width: 100%;
   }
+
   .perfil__data {
     width: 450px;
     padding: 1.5rem;
