@@ -133,7 +133,7 @@ img {
 
 .section {
   padding-block: 2rem 3rem;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 .section__title {
