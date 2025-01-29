@@ -133,6 +133,7 @@ img {
 
 .section {
   padding-block: 2rem 3rem;
+  /* min-height: 90vh; */
 }
 
 .section__title {
@@ -272,7 +273,7 @@ img {
 .about,
 .skills {
   background-color: var(--container-color);
-  padding: 2rem 1.5rem;
+  padding: 1.5rem 1.5rem;
   border-radius: 2rem;
 }
 
@@ -722,7 +723,7 @@ img {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 320px) {
   .container {
     margin-inline: 1rem;
   }
@@ -730,13 +731,23 @@ img {
   .nav {
     padding: 1rem;
   }
-}
 
-@media screen and (min-width: 400px) {
+  .perfil__img {
+    min-width: 280px;
+  }
 
   .exp__logo {
     width: 200px;
     margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  .perfil__img {
+    min-width: 320px;
+    position: absolute;
+    right: 0;
   }
 
 }
@@ -768,6 +779,12 @@ img {
 
   .perfil {
     height: 100%;
+  }
+
+  .perfil__img {
+    min-width: 320px;
+    position: absolute;
+    right: 0;
   }
 
   .projects__container,
@@ -825,6 +842,9 @@ img {
   }
   .perfil__img {
     width: 100%;
+    min-width: 500px;
+    position: absolute;
+    right: 0;
   }
 
   .perfil__data {
@@ -837,6 +857,11 @@ img {
     grid-column: 1/2;
     grid-row: 1/2;
   }
+
+  .info__image {
+    width: 100%;
+  }
+
   .info__name {
     font-size: var(--h2-font-size);
   }
@@ -847,10 +872,8 @@ img {
     align-content: center;
   }
   .about__image {
-    height: 210px;
-  }
-  .about__img {
-    transform: translateY(-1rem);
+    width: 100%;
+
   }
 
   .skills {
